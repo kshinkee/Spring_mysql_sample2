@@ -1,6 +1,6 @@
 package common;
 
-import java.sql.Date;
+import javax.persistence.EntityManager;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -15,17 +15,19 @@ public class App {
 		//
 		// HelloWorld obj = (HelloWorld) context.getBean("helloBean");
 		// obj.printHello();
-
+        
+	//	EntityManager em;
+		
 		java.util.Date date = new java.util.Date();
 		java.sql.Date sqlDate = new java.sql.Date(date.getTime());
 
 		ApplicationContext context = new ClassPathXmlApplicationContext("Spring-Module.xml");
 
 		QuestionDAO questionDAO = (QuestionDAO) context.getBean("questionDAO");
-		Question question = new Question("Why am I single?", sqlDate);
+		Question question = new Question(1222, "Coffee please?", sqlDate);
 		questionDAO.insert(question);
 
-		for (int i = 1; i <= 7; i++) {
+		for (int i = 1; i <= 9; i++) {
 			Question question1 = questionDAO.findByQuestionId(i);
 			System.out.println(i + question1.getQuestionText() + "," + question1.getPubDate());
 		}

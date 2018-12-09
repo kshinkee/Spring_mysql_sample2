@@ -3,9 +3,7 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
 	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 
-	<bean id="helloBean" class="common.HelloWorld">
-		<property name="name" value="Sample01" />
-	</bean>
+	
 
     <import resource="database/Spring-Datasource.xml" />
 	<import resource="question/Spring-Question.xml" />

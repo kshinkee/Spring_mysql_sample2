@@ -58,7 +58,7 @@ public class JdbcQuestionDAO implements QuestionDAO {
 			ResultSet rs = ps.executeQuery();
 			if (rs.next()) {
 				question = new Question(
-//					rs.getInt("ID"),
+					rs.getInt("ID"),
 					rs.getString("QUESTION_TEXT"), 
 					rs.getDate("PUB_DATE")
 				);
